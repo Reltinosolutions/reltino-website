@@ -1,0 +1,98 @@
+/* Custom CSS for animations and any specific overrides */
+
+/* Fade-in-down animation for hero title */
+@keyframes fade-in-down {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-down {
+    animation: fade-in-down 1s ease-out forwards;
+}
+
+/* Fade-in-up animation for hero paragraph */
+@keyframes fade-in-up {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fade-in-up 1s ease-out forwards;
+    animation-delay: 0.3s; /* Delay after title animation */
+}
+
+/* Zoom-in animation for hero button */
+@keyframes zoom-in {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.animate-zoom-in {
+    animation: zoom-in 0.8s ease-out forwards;
+    animation-delay: 0.6s; /* Delay after paragraph animation */
+}
+
+/* General styling for rounded corners on all elements */
+/* This is a broad stroke for demonstration. In a real project,
+   you might apply rounded corners more selectively using Tailwind classes. */
+* {
+    border-radius: 0.75rem; /* Equivalent to Tailwind's rounded-xl */
+}
+
+/* Override for specific elements that shouldn't have rounded corners on all sides */
+/* For example, if you want a sharp edge on one side of a section */
+.rounded-b-lg {
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.rounded-t-lg {
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+/* Ensure images within sections maintain aspect ratio and fit */
+section img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Remove extra space below image */
+}
+
+/* Specific styling for form inputs and textareas */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* subtle shadow */
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+textarea:focus {
+    border-color: #3B82F6; /* blue-500 */
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.4); /* ring-blue-500 with opacity */
+}
